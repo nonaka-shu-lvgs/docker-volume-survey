@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/bind"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:password@localhost:33060/test"
+}
+
+model User {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  @@index(name)
+}
